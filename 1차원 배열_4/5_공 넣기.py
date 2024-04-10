@@ -7,3 +7,11 @@
 # 도현이는 입력으로 주어진 순서대로 공을 넣는다.
 # 출력 : 1번 바구니부터 N번 바구니에 들어있는 공의 번호를 공백으로 구분해 출력한다. 공이 들어있지 않은 바구니는 0을 출력한다.
 
+N,M = map(int,input().split())
+arr = [0]*N #초기화
+for x in range (M) :
+    i,j,k = map(int,input().split())
+    for y in range (i,j+1,1) :
+        arr[y-1] = k
+for x in range (N) :
+    print(arr[x],'',end='')
