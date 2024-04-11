@@ -8,3 +8,18 @@
 
 # 출력 : 1번 바구니부터 N번 바구니에 들어있는 공의 번호를 공백으로 구분해 출력한다.
 
+n,m = map(int, input().split())
+basket = [0]*n
+temp = n+1
+
+for x in range(n):
+  basket[x] = x+1
+
+for x in range(m):
+  i,j = map(int, input().split())
+  temp = basket[i-1]
+  basket[i-1] = basket[j-1]
+  basket[j-1] = temp
+
+for x in range(n):
+  print(basket[x], end=" ")
