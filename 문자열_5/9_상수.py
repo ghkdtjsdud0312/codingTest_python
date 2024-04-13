@@ -5,3 +5,11 @@
 # 입력 : 첫째 줄에 상근이가 칠판에 적은 두 수 A와 B가 주어진다. 두 수는 같지 않은 세 자리 수이며, 0이 포함되어 있지 않다.
 # 출력 : 첫째 줄에 상수의 대답을 출력한다.
 
+num1, num2 = input().split()
+num1 = int(num1[::-1])
+num2 = int(num2[::-1])
+
+if num1 > num2:
+    print(num1)
+else:
+    print(num2)
