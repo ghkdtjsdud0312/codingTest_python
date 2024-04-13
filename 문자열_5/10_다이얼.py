@@ -7,4 +7,11 @@
 # 입력 : 첫째 줄에 알파벳 대문자로 이루어진 단어가 주어진다. 단어의 길이는 2보다 크거나 같고, 15보다 작거나 같다.
 # 출력 : 첫째 줄에 다이얼을 걸기 위해서 필요한 최소 시간을 출력한다.
 
-
+dial = ['ABC','DEF','GHI','JKL','MNO','PQRS','TUV','WXYZ']
+a = input()
+ret = 0
+for j in range(len(a)):
+    for i in dial:
+        if a[j] in i:
+            ret += dial.index(i)+3
+print(ret)
