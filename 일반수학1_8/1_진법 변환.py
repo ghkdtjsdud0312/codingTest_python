@@ -6,3 +6,10 @@
 # B진법 수 N을 10진법으로 바꾸면, 항상 10억보다 작거나 같다.
 # 출력 : 첫째 줄에 B진법 수 N을 10진법으로 출력한다.
 
+num_list = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+n,b = input().split()
+answer = 0
+for i, num in enumerate(n[::-1]):
+    answer += int(b) ** i * num_list.index(num)
+print(answer)
