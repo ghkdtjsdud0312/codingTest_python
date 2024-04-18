@@ -8,3 +8,8 @@
 # 입력 : 첫째 줄에 a, b, c (1 ≤ a, b, c ≤ 100)가 주어진다.
 # 출력 : 첫째 줄에 만들 수 있는 가장 큰 삼각형의 둘레를 출력한다.
 
+ls = sorted(list(map(int, input().split())))
+if ls[0] + ls[1] > ls[2]:
+    print(sum(ls))
+else:
+    print((ls[0] + ls[1]) * 2 - 1)
