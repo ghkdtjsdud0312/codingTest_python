@@ -9,3 +9,15 @@
 # 입력 : 총 3개의 줄에 걸쳐 삼각형의 각의 크기가 주어진다. 모든 정수는 0보다 크고, 180보다 작다.
 # 출력 : 문제의 설명에 따라 Equilateral, Isosceles, Scalene, Error 중 하나를 출력한다.
 
+a = int(input())
+b = int(input())
+c = int(input())
+if a+b+c == 180:
+    if a == b == c == 60:
+        print("Equilateral")
+    elif a == b or b == c or a == c:
+        print("Isosceles")
+    else:
+        print("Scalene")
+else:
+    print("Error")
