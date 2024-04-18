@@ -10,3 +10,6 @@
 # 1 ≦ B ≦ 100.
 # A, B 는 정수이다.
 
+a = int(input())
+b = int(input())
+print(a*b)
