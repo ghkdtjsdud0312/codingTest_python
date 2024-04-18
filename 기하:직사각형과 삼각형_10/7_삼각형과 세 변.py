@@ -8,3 +8,15 @@
 # 입력 : 각 줄에는 1,000을 넘지 않는 양의 정수 3개가 입력된다. 마지막 줄은 0 0 0이며 이 줄은 계산하지 않는다.
 # 출력 : 각 입력에 맞는 결과 (Equilateral, Isosceles, Scalene, Invalid) 를 출력하시오.
 
+while True :
+  a, b, c = map(int, input().split())
+  if a == b == c == 0 :
+    break
+  if sum((a, b, c)) - max((a, b, c)) <= max((a, b, c)) :
+    print("Invalid")
+  elif a == b == c :
+    print('Equilateral')
+  elif a == b or b == c or a == c :
+    print("Isosceles")
+  else :
+    print("Scalene")
