@@ -9,3 +9,11 @@
 # 다음 줄에 양의 정수 n0가 주어진다. (1 ≤ n0 ≤ 100)
 # 출력 : f(n), c, n0가 O(n) 정의를 만족하면 1, 아니면 0을 출력한다.
 
+a1,a0 = map(int,input().split())
+c = int(input())
+n0 = int(input())
+
+if((a1*n0+a0 <= c*n0)) and (a1 <= c):
+    print(1)
+else:
+    print(0)
