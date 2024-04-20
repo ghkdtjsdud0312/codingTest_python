@@ -8,4 +8,14 @@
 # 합이 M을 넘지 않는 카드 3장을 찾을 수 있는 경우만 입력으로 주어진다.
 # 출력 : 첫째 줄에 M을 넘지 않으면서 M에 최대한 가까운 카드 3장의 합을 출력한다.
 
-
+n,m = map(int,input().split())
+arr = list(map(int,input().split()))
+result = 0
+for i in range(n):
+    for j in range(i+1,n):
+        for k in range(j+1,n):
+            if arr[i] + arr[j] + arr[k] > m:
+                continue
+            else:
+                result = max(result, arr[i] + arr[j] + arr[k])
+print(result)
