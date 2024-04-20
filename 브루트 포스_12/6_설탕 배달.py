@@ -5,3 +5,17 @@
 # 입력 : 첫째 줄에 N이 주어진다. (3 ≤ N ≤ 5000)
 # 출력 : 상근이가 배달하는 봉지의 최소 개수를 출력한다. 만약, 정확하게 N킬로그램을 만들 수 없다면 -1을 출력한다.
 
+num = int(input())
+count = 0
+
+while num >= 0:
+    if num % 5 == 0:
+        count += int(num // 5)
+        print(count)
+        break
+
+    num -= 3
+    count += 1
+
+else:
+    print(-1)
