@@ -9,3 +9,14 @@
 # 문제에서 언급한 방정식을 만족하는 (x,y)가 유일하게 존재하고, 이 때 s와 y가 각각 -999이상 999이하의 정수인 경우만 입력으로 주어짐이 보장된다.
 # 출력 : 문제의 답인 x와y를 공백으로 구분해 출력한다.
 
+a,b,c,d,e,f = map(int,input().split())
+
+result = []
+for x in range(-999, 1000):
+    for y in range(-999, 1000):
+        if a*x + b*y == c and d*x + e*y == f:
+            result = [x,y]
+            break
+
+for i in range(2):
+    print(result[i], end=' ')
