@@ -9,3 +9,7 @@
 # 1 <= n <=1000
 # 1 <= k <= n
 # 0 <= x <= 10000
+
+N,k = map(int,input().split())
+scores = map(int,input().split())
+print(sorted(scores)[-k])
