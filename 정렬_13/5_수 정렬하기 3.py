@@ -3,16 +3,18 @@
 # 입력 : 첫째 줄에 수의 개수 N(1 ≤ N ≤ 10,000,000)이 주어진다. 둘째 줄부터 N개의 줄에는 수가 주어진다. 이 수는 10,000보다 작거나 같은 자연수이다.
 # 출력 : 첫째 줄부터 N개의 줄에 오름차순으로 정렬한 결과를 한 줄에 하나씩 출력한다.
 
-
 import sys
+input = sys.stdin.readline
 
-n = int(sys.stdin.readline())
-num_list = []
+n = int(input())
 
-for _ in range(n):
-    num_list.append(int(sys.stdin.readline()))
+lst = [0] * 10001
 
-sorted_list = sorted(num_list)
+for i in range(n):
+    num = int(input())
+    lst[num] += 1
 
-for i in sorted_list:
-    print(i)
+for i in range(10001):
+    if lst[i]:
+        for j in range(lst[i]):
+            print(i)
