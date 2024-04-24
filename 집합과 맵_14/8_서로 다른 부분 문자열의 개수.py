@@ -5,3 +5,10 @@
 # 입력 : 첫째 줄에 문자열 S가 주어진다. S는 알파벳 소문자로만 이루어져 있고, 길이는 1,000 이하이다.
 # 출력 : 첫째 줄에 S의 서로 다른 부분 문자열의 개수를 출력한다.
 
+s=input()
+total=set()
+for i in range(len(s)):
+    for j in range(i,len(s)):
+        total.add(s[i:j+1])#i번째 문자부터 부분문자열 구하기
+
+print(len(total))
