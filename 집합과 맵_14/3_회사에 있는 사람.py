@@ -6,3 +6,18 @@
 # 회사에는 동명이인이 없으며, 대소문자가 다른 경우에는 다른 이름이다. 사람들의 이름은 알파벳 대소문자로 구성된 5글자 이하의 문자열이다.
 # 출력 : 현재 회사에 있는 사람의 이름을 사전 순의 역순으로 한 줄에 한 명씩 출력한다.
 
+import sys
+input = sys.stdin.readline
+
+# 입력
+N = int(input())
+company = {}
+for _ in range(N):
+    man, state = input().rstrip().split()
+    if state == 'enter':
+        company[man] = True
+    else:
+        del company[man]
+
+# 출력
+print("\n".join(sorted(company.keys(), reverse=True)))
