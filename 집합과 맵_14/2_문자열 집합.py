@@ -7,3 +7,15 @@
 # 입력으로 주어지는 문자열은 알파벳 소문자로만 이루어져 있으며, 길이는 500을 넘지 않는다. 집합 S에 같은 문자열이 여러 번 주어지는 경우는 없다.
 # 출력 : 첫째 줄에 M개의 문자열 중에 총 몇 개가 집합 S에 포함되어 있는지 출력한다.
 
+import sys
+input = sys.stdin.readline
+N, M = map(int, input().split())
+S = set()
+for i in range(N):
+    S.add(input())
+ans = 0
+for _ in range(M):
+    t = input()
+    if t in S:
+        ans+=1
+print(ans)
