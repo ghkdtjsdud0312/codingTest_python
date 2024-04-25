@@ -15,4 +15,15 @@
 # 추가: 큰 수 입력에 대하여 변수를 64비트 정수로 선언하시오. C/C++에서는 long long int를 사용하고, Java에서는 long을 사용하시오.
 # 출력 : A와 B의 최소공배수를 한 줄에 출력한다.
 
+# 입력
+A, B = map(int, input().split())
+res = A*B
 
+# 최대공약수 (유클리드 호제법)
+while B:
+    if A > B:
+        A, B = B, A
+    B %= A
+
+# 최소공배수
+print(res//A)
