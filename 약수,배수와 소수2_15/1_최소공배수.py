@@ -4,3 +4,12 @@
 # 입력 : 첫째 줄에 테스트 케이스의 개수 T(1 ≤ T ≤ 1,000)가 주어진다. 둘째 줄부터 T개의 줄에 걸쳐서 A와 B가 주어진다. (1 ≤ A, B ≤ 45,000)
 # 출력 : 첫째 줄부터 T개의 줄에 A와 B의 최소공배수를 입력받은 순서대로 한 줄에 하나씩 출력한다.
 
+t = int(input())
+for i in range(t):
+    a,b = map(int,input().split())
+    result = a*b
+
+    while b > 0:
+        a,b = b, a%b
+
+    print(result // a)
