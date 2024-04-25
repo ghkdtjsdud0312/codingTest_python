@@ -4,3 +4,17 @@
 # 입력 : 첫째 줄과 둘째 줄에, 각 분수의 분자와 분모를 뜻하는 두 개의 자연수가 순서대로 주어진다. 입력되는 네 자연수는 모두 30,000 이하이다.
 # 출력 : 첫째 줄에 구하고자 하는 기약분수의 분자와 분모를 뜻하는 두 개의 자연수를 빈 칸을 사이에 두고 순서대로 출력한다.
 
+a, b = map(int, input().split())
+c, d = map(int, input().split())
+
+e = a * d + b * c
+f = b * d
+
+def gcd(e, f):
+    while f:
+        mod = f
+        f = e % f
+        e = mod
+    return e
+
+print(e//gcd(e, f), f//gcd(e, f))
