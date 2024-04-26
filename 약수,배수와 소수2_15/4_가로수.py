@@ -6,3 +6,23 @@
 # 입력 : 첫째 줄에는 이미 심어져 있는 가로수의 수를 나타내는 하나의 정수 N이 주어진다(3 ≤ N ≤ 100,000). 둘째 줄부터 N개의 줄에는 각 줄마다 심어져 있는 가로수의 위치가 양의 정수로 주어지며, 가로수의 위치를 나타내는 정수는 1,000,000,000 이하이다. 가로수의 위치를 나타내는 정수는 모두 다르고, N개의 가로수는 기준점으로부터 떨어진 거리가 가까운 순서대로 주어진다.
 # 출력 : 모든 가로수가 같은 간격이 되도록 새로 심어야 하는 가로수의 최소수를 첫 번째 줄에 출력한다.
 
+import sys
+input = sys.stdin.readline
+import math
+
+n = int(input())
+a = int(input()) # 첫 번째 나무 좌표
+
+A = []
+
+for i in range(n-1):
+    num = int(input())
+    A.append(num-a) # 나무와 나무 사이 거리
+    a = num
+g = A[0] # 첫 번째 나무와 두 번째 나무 사이 거리
+for j in range(1,len(A)):
+    g = math.gcd(g,A[j])
+result = 0
+for each in A:
+    result += each//g -1
+print(result)
