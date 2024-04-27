@@ -7,3 +7,24 @@
 # 입력의 마지막에는 0이 주어진다.
 # 출력 : 각 테스트 케이스에 대해서, n보다 크고, 2n보다 작거나 같은 소수의 개수를 출력한다.
 
+def isPrime(x):
+    if x == 1:
+        return False
+    else:
+        for i in range(2, int(x ** 0.5) + 1):
+            if x % i == 0:
+                return False
+        return True
+
+
+while True:
+    n = int(input())
+
+    if n == 0:
+        break
+
+    prime = 0
+    for i in range(n + 1, 2 * n + 1):
+        if isPrime(i):
+            prime += 1
+    print(prime)
