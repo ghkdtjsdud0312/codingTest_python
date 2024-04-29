@@ -9,19 +9,20 @@
 
 import sys
 
-n = int(sys.stdin.readline())
-wait = list(map(int, sys.stdin.readline().split()))
-
-target = 1
+input = sys.stdin.readline
+n = int(input())
+wait = list(map(int, input().split()))
 tmp = []
-for i in range(n):
-	if wait[0] == target:
-		wait.pop(0)
+target = 1
+for i in wait:
+	tmp.append(i)
+	while tmp and tmp[-1] == target: # tmp 스택 하나로 비교
+		tmp.pop()
 		target += 1
-	else:
-		tmp.append(wait.pop(0))
-		if i != 0 and tmp[-1] > tmp[-2]:
-			print("Sad")
-			sys.exit()
-print("Nice")
-
+	if len(tmp) > 1 and tmp[-1] > tmp[-2]:
+		print("Sad")
+		sys.exit()
+if tmp:
+	print("Sad")
+else:
+	print("Nice")
