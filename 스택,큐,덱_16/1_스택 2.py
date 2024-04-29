@@ -11,3 +11,32 @@
 # 출력을 요구하는 명령은 하나 이상 주어진다.
 # 출력 : 출력을 요구하는 명령이 주어질 때마다 명령의 결과를 한 줄에 하나씩 출력한다.
 
+import sys
+
+stack = []
+
+n = int(sys.stdin.readline())
+
+for _ in range(n):
+
+    command = sys.stdin.readline().split()
+
+    if command[0] == '1':
+        stack.append(command[1])
+    elif command[0] == '2':
+        if stack:
+            print(stack.pop())
+        else:
+            print(-1)
+    elif command[0] == '3':
+        print(len(stack))
+    elif command[0] == '4':
+        if stack:
+            print(0)
+        else:
+            print(1)
+    elif command[0] == '5':
+        if stack:
+            print(stack[-1])
+        else:
+            print(-1)
