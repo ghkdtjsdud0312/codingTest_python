@@ -7,5 +7,21 @@
 # 다음 줄에는 승환이 앞에 서있는 모든 학생들의 번호표(1,2,...,N) 순서가 앞에서부터 뒤 순서로 주어진다.
 # 출력 : 승환이가 무사히 간식을 받을 수 있으면 "Nice"(따옴표는 제외)를 출력하고 그렇지 않다면 "Sad"(따옴표는 제외)를 출력한다.
 
+import sys
 
+n = int(sys.stdin.readline())
+wait = list(map(int, sys.stdin.readline().split()))
+
+target = 1
+tmp = []
+for i in range(n):
+	if wait[0] == target:
+		wait.pop(0)
+		target += 1
+	else:
+		tmp.append(wait.pop(0))
+		if i != 0 and tmp[-1] > tmp[-2]:
+			print("Sad")
+			sys.exit()
+print("Nice")
 
