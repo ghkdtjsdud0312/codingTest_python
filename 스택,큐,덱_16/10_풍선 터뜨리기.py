@@ -5,3 +5,21 @@
 # 입력 : 첫째 줄에 자연수 N(1 ≤ N ≤ 1,000)이 주어진다. 다음 줄에는 차례로 각 풍선 안의 종이에 적혀 있는 수가 주어진다. 종이에 0은 적혀있지 않다.
 # 출력 : 첫째 줄에 터진 풍선의 번호를 차례로 나열한다.
 
+import sys
+from collections import deque
+input = sys.stdin.readline
+
+n = int(input())
+q = deque(enumerate(map(int, input().split())))
+ans = []
+
+while q:
+    idx, paper = q.popleft()
+    ans.append(idx + 1)
+
+    if paper > 0:
+        q.rotate(-(paper - 1))
+    elif paper < 0:
+        q.rotate(-paper)
+
+print(' '.join(map(str, ans)))
