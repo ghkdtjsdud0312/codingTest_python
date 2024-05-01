@@ -6,3 +6,12 @@
 # 입력 : 첫째 줄에 정수 N(1 ≤ N ≤ 500,000)이 주어진다.
 # 출력 : 첫째 줄에 남게 되는 카드의 번호를 출력한다.
 
+import math
+
+def find_last_card(N):
+    M = 2 ** math.floor(math.log2(N))
+    last_card = 2 * (N - M)
+    return last_card if last_card != 0 else N
+
+N = int(input())
+print(find_last_card(N))
