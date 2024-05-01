@@ -5,4 +5,22 @@
 # 입력 : 첫째 줄에 N과 K가 빈 칸을 사이에 두고 순서대로 주어진다. (1 ≤ K ≤ N ≤ 1,000)
 # 출력 : 예제와 같이 요세푸스 순열을 출력한다.
 
+from sys import stdin
+
+N, K = map(int,stdin.readline().split())
+index = 0
+array = list(range(1,N+1))
+result = []
+
+while len(array) != 0: # 리스트 수가 0이 아니면 반복
+    index += (K-1)
+    index = index % len(array)
+    result.append(array.pop(index))
+
+## 문자
+print("<",end="")
+for i in range(N-1):
+    print(result[i],end=", ")
+print(result[N-1], end = "")
+print(">",end="")
 
