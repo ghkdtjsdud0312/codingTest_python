@@ -4,3 +4,16 @@
 # 입력 : 입력의 첫 줄에는 테스트 케이스의 개수 T가 주어진다. 그 다음 줄부터 각각의 테스트케이스에 대해 강의 서쪽과 동쪽에 있는 사이트의 개수 정수 N, M (0 < N ≤ M < 30)이 주어진다.
 # 출력 : 각 테스트 케이스에 대해 주어진 조건하에 다리를 지을 수 있는 경우의 수를 출력한다.
 
+def factorial(n):
+    num = 1
+    for i in range(1, n+1):
+        num *= i
+    return num
+
+
+T = int(input())
+
+for _ in range(T):
+    n, m = map(int, input().split())
+    bridge = factorial(m) // (factorial(n) * factorial(m - n))
+    print(bridge)
